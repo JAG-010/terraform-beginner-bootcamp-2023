@@ -21,3 +21,28 @@ Terraform CLI was not installed by default due to a GPG key deprication, It has 
 This was updated on `.gitpod.yml` file under `tasks`
 
 [Terraform CLI installation](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+
+
+## Gitpod Lifecycle
+
+We need to be careful when using the Init because it will not rerun if we restart an existing workspace.
+
+https://www.gitpod.io/docs/configure/workspaces/tasks
+
+## 0.3.0
+## AWS CLI Installation
+
+check if our AWS credentials is configured correctly by running the following AWS CLI command:
+```sh
+aws sts get-caller-identity
+```
+
+If it is succesful you should see a json payload return that looks like this:
+
+```json
+{
+    "UserId": "AKIAWQDXRGLDFYML9YLR",
+    "Account": "123456789012",
+    "Arn": "arn:aws:iam::123456789012:user/tf-beginner-bootcamp-2023"
+}
+```
